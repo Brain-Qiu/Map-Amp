@@ -1,4 +1,4 @@
-# Legged Lab: Direct IsaacLab Workflow for Legged Robots
+# Mode-Separated Adversarial Motion Priors for Unified Multi-Gait Proprioceptive Humanoid Locomotion
 
 [![IsaacSim](https://img.shields.io/badge/IsaacSim-5.1.0-green.svg)](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html)
 [![Isaac Lab](https://img.shields.io/badge/IsaacLab-2.3.0-green)](https://github.com/isaac-sim/IsaacLab/tree/v2.3.0)
