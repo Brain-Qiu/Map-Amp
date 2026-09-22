@@ -23,10 +23,10 @@ class UnitreeFSMRewardCfg(RewardCfg):
     survival = RewTerm(func=mdp_fsm.survival_reward, weight=0.1)
     
     # ========== Velocity Tracking Rewards ==========
-    track_lin_vel_xy_exp = RewTerm(func=mdp_fsm.track_lin_vel_xy_yaw_frame_exp, weight=4.0, params={"std": 0.5})    #1.0
-    track_ang_vel_z_exp = RewTerm(func=mdp_fsm.track_ang_vel_z_world_exp, weight=3.0, params={"std": 0.5})  #-2.0
-    not_moving_penalty = RewTerm(func=mdp_fsm.not_moving_penalty, weight=-1.0, params={"v_min": 0.06}) #-0.5
-    not_yaw_penalty = RewTerm(func=mdp_fsm.not_yaw_penalty, weight=-1.0, params={"yaw_min": 0.05})  #-0.5
+    track_lin_vel_xy_exp = RewTerm(func=mdp_fsm.track_lin_vel_xy_yaw_frame_exp, weight=4.0, params={"std": 0.5})
+    track_ang_vel_z_exp = RewTerm(func=mdp_fsm.track_ang_vel_z_world_exp, weight=3.0, params={"std": 0.5})
+    not_moving_penalty = RewTerm(func=mdp_fsm.not_moving_penalty, weight=-1.0, params={"v_min": 0.06})
+    not_yaw_penalty = RewTerm(func=mdp_fsm.not_yaw_penalty, weight=-1.0, params={"yaw_min": 0.05})
     
     # ========== Base Motion Penalties ==========
     lin_vel_z_l2 = RewTerm(func=mdp_fsm.lin_vel_z_l2, weight=-0.5)
@@ -39,9 +39,9 @@ class UnitreeFSMRewardCfg(RewardCfg):
         func=mdp_fsm.energy_mode_aware,
         weight=-1e-3,
         params={
-            "stand_scale": 1.0,   # Full penalty during stand
-            "walk_scale": 0.7,    # 70% penalty during walk
-            "run_scale": 0.3,     # 30% penalty during run (allow high energy)
+            "stand_scale": 1.0,
+            "walk_scale": 0.7,
+            "run_scale": 0.3,
             "transition_scale": 0.5
         }
     )
@@ -52,7 +52,7 @@ class UnitreeFSMRewardCfg(RewardCfg):
         params={
             "stand_scale": 1.0,
             "walk_scale": 0.7,
-            "run_scale": 0.3,     # Allow rapid action changes during run
+            "run_scale": 0.3,
             "transition_scale": 0.5
         }
     )
@@ -63,7 +63,7 @@ class UnitreeFSMRewardCfg(RewardCfg):
         params={
             "stand_scale": 1.0,
             "walk_scale": 0.7,
-            "run_scale": 0.3,     # Allow high joint acceleration for explosive movements
+            "run_scale": 0.3,
             "transition_scale": 0.5
         }
     )
@@ -85,7 +85,7 @@ class UnitreeFSMRewardCfg(RewardCfg):
         weight=-1.0
     )
     flat_orientation_l2 = RewTerm(func=mdp_fsm.flat_orientation_l2, weight=-1.0)
-    termination_penalty = RewTerm(func=mdp_fsm.is_terminated, weight=-50.0) #-200
+    termination_penalty = RewTerm(func=mdp_fsm.is_terminated, weight=-50.0)
     
     # ========== Feet Rewards ==========
     feet_slide = RewTerm(
@@ -123,8 +123,7 @@ class UnitreeFSMRewardCfg(RewardCfg):
     
     # ========== Joint Penalties ==========
     dof_pos_limits = RewTerm(func=mdp_fsm.joint_pos_limits, weight=-1.0)
-    stand_still= RewTerm(func=mdp_fsm.stand_still_joint_deviation_l1, weight=-1.0, 
-                                         params={"asset_cfg": SceneEntityCfg("robot", joint_names=".*")})
+    stand_still= RewTerm(func=mdp_fsm.stand_still_joint_deviation_l1, weight=-1.0, params={"asset_cfg": SceneEntityCfg("robot", joint_names=".*")})
     
     # ========== Regularization Penalties ==========
     ankle_torque = RewTerm(func=mdp_fsm.ankle_torque, weight=-0.0005)  
