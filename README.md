@@ -13,7 +13,7 @@
 This repository provides a workflow for training humanoid robots with multi-gait locomotion using IsaacLab. It introduces MAP-AMP, a unified policy framework that combines FSM-guided mode management, mode-separated adversarial motion priors, velocity curriculum learning, and symmetry regularization for robust and natural Stand, Walk, Run, and Transition behaviors.
 
 <p align="center">
-  <img src="./example/gif/unitree_g1.gif" width="800">
+  <img src="./example/gif/unitree_g1.gif" width="300">
 </p>
 
 ## Installation
