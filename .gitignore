@@ -4,11 +4,8 @@
 outputs
 paper
 logs
-scripts
 run_bash.sh
 wandb
-legged_lab/assets/t1pro/usd/configuration/t1pro_base.usd
-legged_lab/assets/t1pro/train_asset/
 
 env/
 venv/

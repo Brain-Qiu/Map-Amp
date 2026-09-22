@@ -152,7 +152,7 @@ UNITREE_G1_29DOF_CFG = UnitreeArticulationCfg(
                 ".*_hip_yaw_joint": 88,
                 ".*_hip_pitch_joint": 88,
                 "waist_yaw_joint": 88,
-                ".*_hip_roll_joint": 139,
+                ".*_hip_roll_joint": 88,
                 ".*_knee_joint": 139,
                 "waist_roll_joint": 25,
                 "waist_pitch_joint": 25,

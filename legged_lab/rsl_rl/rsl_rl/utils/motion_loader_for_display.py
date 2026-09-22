@@ -24,8 +24,8 @@ import torch
 
 
 class AMPLoaderDisplay:
-    JOINT_POS_SIZE = 23
-    JOINT_VEL_SIZE = 23
+    JOINT_POS_SIZE = 29
+    JOINT_VEL_SIZE = 29
     ROOT_STATES_NUM = 6
     
     ROOT_POSE_START_IDX = 0

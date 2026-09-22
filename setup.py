@@ -18,12 +18,26 @@ setup(
     packages=find_packages(),
     version="1.0.0",
     install_requires=[
-        "h5py==3.16.0",
-        "tensordict==0.13.0",
-        "tensorboard==2.21.0",
-        # 'isaacsim',
-        #"IsaacLab = 5.1.0",
-        #"rsl-rl-lib = 2.3.0",
-    ],
+    "h5py==3.16.0",
+    "tensordict==0.13.0",
+    "tensorboard==2.21.0",
+
+    "etils==1.14.0",
+    "glfw==2.10.2",
+    "mujoco==3.13.0",
+    "PyOpenGL==3.1.10",
+
+    "evdev==2.0.0",
+    "pynput==1.8.2",
+    "python-xlib==0.33",
+    "six==1.17.0",
+
+    "scipy==1.17.1",
+    "PyYAML==6.0.3",
+
+    # "isaacsim",
+    # "IsaacLab==5.1.0",
+    # "rsl-rl-lib==2.3.0",
+],
 )
 

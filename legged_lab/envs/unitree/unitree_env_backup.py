@@ -914,7 +914,7 @@ class UnitreeEnv(VecEnv):
                 
                 elif intent_id == 2:  # RUN intent
                     # Balanced initialization: 34% STAND, 33% WALK, 33% RUN
-                    if rand < 0.40:
+                    if rand < 0.20:
                         self.current_mode[i] = self.MODE_STAND  # STAND→TRANSITION→RUN
                     elif rand < 0.60:
                         self.current_mode[i] = self.MODE_WALK   # WALK→RUN direct
@@ -1146,7 +1146,7 @@ class UnitreeEnv(VecEnv):
             self.is_run = (self.current_mode == self.MODE_RUN)
             self.is_transition = (self.current_mode == self.MODE_TRANSITION)
             self.is_move = self.is_walk | self.is_run  | self.is_transition
-
+    
     def _update_run_vx_curriculum(self):
         """Advance run_vel_x_range upper bound per the iteration-based schedule."""
         schedule = self.cfg.mode_manager.run_vx_curriculum

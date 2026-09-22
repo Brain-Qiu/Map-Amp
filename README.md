@@ -2,13 +2,11 @@
 
 [![IsaacSim](https://img.shields.io/badge/IsaacSim-5.1.0-green.svg)](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html)
 [![Isaac Lab](https://img.shields.io/badge/IsaacLab-2.3.0-green)](https://github.com/isaac-sim/IsaacLab/tree/v2.3.0)
-[![RSL_RL](https://img.shields.io/badge/RSL_RL-2.3.3-blue)](https://github.com/leggedrobotics/rsl_rl)
+[![RSL_RL](https://img.shields.io/badge/RSL_RL-2.3.1-blue)](https://github.com/leggedrobotics/rsl_rl)
 [![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![Linux platform](https://img.shields.io/badge/platform-linux--64-orange.svg)](https://releases.ubuntu.com/22.04/)
 [![License](https://img.shields.io/badge/license-BSD--3-yellow.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
-
-## Overview
 
 ## Overview
 
@@ -132,7 +130,7 @@ Exported_policy/ contains pretrained policies provided by the project. When usin
 ```bash
 python legged_lab/scripts/sim2sim_unitree_fsm.py --experiment_name unitree_map_amp --load_run *-*-*_*-*-*
 ```
-```
+
 
 ## References and Thanks
 This project repository builds upon the shoulders of giants.
@@ -146,11 +144,10 @@ If you use Legged Lab in your research, you can cite it as follows:
 
 ```bibtex
 @software{LeggedLab,
-  author = {Tlibot, Qiu},
+  author = {Huangjin Qiu},
   license = {BSD-3-Clause},
-  title = {Legged Lab: amp and rl Workflow for Legged Robots},
-  url = {https://github.com/Brain-Qiu/LeggedLab_Amp},
+  title = {MAP-AMP: Mode-Separated Adversarial Motion Priors for Unified Multi-Gait Proprioceptive Humanoid Locomotion},
+  url = {https://github.com/Brain-Qiu/map-amp.git},
   version = {1.0.0},
   year = {2026}
 }
-```

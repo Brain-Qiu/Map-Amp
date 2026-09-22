@@ -11,8 +11,6 @@
 
 import math
 from dataclasses import MISSING
-from legged_lab.assets.t2pro import T2PRO_20DOF
-from legged_lab.assets.t1mini import T1MINI
 from legged_lab.assets.unitree_fsm import UNITREE_G1_29DOF_CFG
 from legged_lab.terrains import GRAVEL_TERRAINS_CFG, ROUGH_TERRAINS_CFG
 from isaaclab.managers import EventTermCfg as EventTerm
