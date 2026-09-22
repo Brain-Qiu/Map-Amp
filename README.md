@@ -12,6 +12,10 @@
 
 This repository provides a workflow for training humanoid robots with multi-gait locomotion using IsaacLab. It introduces MAP-AMP, a unified policy framework that combines FSM-guided mode management, mode-separated adversarial motion priors, velocity curriculum learning, and symmetry regularization for robust and natural Stand, Walk, Run, and Transition behaviors.
 
+<p align="center">
+  <img src="./example/gif/unitree_g1.gif" width="800">
+</p>
+
 ## Installation
 
 - Install Isaac Lab by following the [installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html). We recommend using the conda installation as it simplifies calling Python scripts from the terminal.
@@ -49,10 +53,10 @@ source /path/to/isaacsim/setup_conda_env.sh
 
 ### 5. Install MAP-AMP
 ```bash
-cd map_amp/legged_lab/rsl_rl
+cd Map-Amp/legged_lab/rsl_rl
 pip install -e .
 cd ../..
-pip install -e . --no-deps
+pip install -e .
 
 - Verify that the extension is correctly installed by running the following command:
 ```bash
