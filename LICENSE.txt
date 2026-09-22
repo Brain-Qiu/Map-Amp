@@ -1,10 +1,13 @@
 Copyright (c) 2022-2025, The Isaac Lab Project Developers.
 All rights reserved.
-Original code is licensed under BSD-3-Clause.
 
 Copyright (c) 2025-2026, The Legged Lab Project Developers.
 All rights reserved.
-Modifications are licensed under BSD-3-Clause.
+
+Copyright (c) 2026-2027, The MAP-AMP Project Developers.
+All rights reserved.
+
+Licensed under the BSD 3-Clause License.
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -30,5 +33,3 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-

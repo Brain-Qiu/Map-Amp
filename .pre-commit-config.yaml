@@ -40,6 +40,7 @@ repos:
         # FIXME: This is a hack because Pytorch does not like: torch.Tensor | dict aliasing
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
+    
     hooks:
       - id: codespell
         additional_dependencies:

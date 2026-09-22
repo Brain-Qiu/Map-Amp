@@ -82,14 +82,14 @@ The dataset consists of two parts with distinct functions and formats, requiring
 - **Step 1: Data Processing and Visualization Data Saving.**
 
 ```bash
-python legged_lab/scripts/gmr_data_conversion.py --input_pkl <path_to_save_robot_data.pkl> --output_txt legged_lab/envs/t1pro/datasets/motion_visualization/motion.txt
+python legged_lab/scripts/gmr_data_conversion.py --input_pkl <path_to_save_robot_data.pkl> --output_txt <path_to_save_robot_data.txt>
 ```
 
 **Note**: Before starting step 2, set the `amp_motion_files_display` path in the config to the file generated in step 1.
 
 - **Step 2: Motion Visualization and Expert Data Saving.**
 ```bash
-python legged_lab/scripts/play_amp_animation.py --task=unitree_map_amp --save_path legged_lab/envs/t1pro/datasets/motion_amp_expert/motion.txt
+python legged_lab/scripts/play_amp_animation.py --task=unitree_map_amp --save_path <path_to_save_robot_amp_data.txt>
 ```
 **Note**: After step 2, set the `amp_motion_files` path in the config to the file generated in step 2.
 
@@ -109,17 +109,17 @@ Train the policy using AMP expert data from t1pro/datasets/motion_amp_expert.
 python legged_lab/scripts/train.py --task=unitree_map_amp --headless --logger=tensorboard --num_envs=4096
 ```
 
-Train the policy using RL.
+Train the policy using MAP-AMP.
 
 ```bash
 python legged_lab/scripts/train.py --task=unitree_map_amp --headless --logger=tensorboard --num_envs=4096
 ```
 ### Play
 
-Run the trained policy.
+Play the trained policy.
 
 ```bash
-python legged_lab/scripts/play_unitree_fsm.py --task=unitree_map_amp   #map_amp task
+python legged_lab/scripts/play_unitree_fsm.py --task=unitree_map_amp 
 ```
 
 ### Sim2Sim(MuJoCo)
@@ -134,9 +134,13 @@ python legged_lab/scripts/sim2sim_unitree_fsm.py --experiment_name unitree_map_a
 
 ## References and Thanks
 This project repository builds upon the shoulders of giants.
-* [IsaacLab](https://github.com/isaac-sim/IsaacLab)   The various reusable practical components in IsaacLab greatly simplify the complexity of LeggedLab.
-* [legged_gym](https://github.com/leggedrobotics/legged_gym)   We borrowed the code organization and environment definition logic of legged_gym and simplified it as much as possible.
-* [Protomotions](https://github.com/NVlabs/ProtoMotions)   The motivation for building this repository comes from protomotions. For the first time, we realized that we could create our own environment using only IsaacLab components without inheriting 'DirectRLEnv' or 'ManagerBasedRLEnv'.
+* [IsaacLab](https://github.com/isaac-sim/IsaacLab) Provides the core simulation and reinforcement learning infrastructure.
+* [LeggedLab](https://github.com/Hellod035/LeggedLab) Provides a lightweight legged-robot reinforcement learning framework.
+* [RSL-RL](https://github.com/leggedrobotics/rsl_rl) Provides the reinforcement learning training framework used for policy optimization.
+* [TienKung-Lab](https://github.com/Open-X-Humanoid/TienKung-Lab) Provides references for humanoid locomotion training and deployment.
+* [GMR](https://github.com/YanjieZe/GMR) Provides the motion retargeting pipeline for humanoid robots.
+* [AMASS](https://amass.is.tue.mpg.de/) Provides large-scale human motion capture data.
+* [MoRE](https://github.com/TeleHuman/MoRE) Provides references for multi-expert humanoid locomotion learning.
 
 ## Citation
 
@@ -147,7 +151,7 @@ If you use Legged Lab in your research, you can cite it as follows:
   author = {Huangjin Qiu},
   license = {BSD-3-Clause},
   title = {MAP-AMP: Mode-Separated Adversarial Motion Priors for Unified Multi-Gait Proprioceptive Humanoid Locomotion},
-  url = {https://github.com/Brain-Qiu/map-amp.git},
+  url = {https://github.com/Brain-Qiu/Map-Amp.git},
   version = {1.0.0},
   year = {2026}
 }
