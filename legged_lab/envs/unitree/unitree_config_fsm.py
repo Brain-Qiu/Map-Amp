@@ -192,7 +192,7 @@ class UnitreeMapAMPAgentCfg(BaseAgentCfg):
         super().__post_init__()
         
         # ========== Training Configuration ==========
-        self.max_iterations = 30000
+        self.max_iterations = 35000
         self.save_interval = 1000
         self.resume = False
         

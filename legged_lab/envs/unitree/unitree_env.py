@@ -695,26 +695,6 @@ class UnitreeEnv(VecEnv):
         time_out_buf = self.episode_length_buf >= self.max_episode_length
         reset_buf |= time_out_buf
         return reset_buf, time_out_buf
-    # def check_reset(self):
-    #     net_contact_forces = self.contact_sensor.data.net_forces_w_history
-
-    #     contact_reset = torch.any(
-    #     torch.max(
-    #         torch.norm(
-    #             net_contact_forces[:, :, self.termination_contact_cfg.body_ids],
-    #             dim=-1,
-    #         ),
-    #         dim=1,
-    #     )[0]
-    #     > 1.0,
-    #     dim=1,
-    #     )
-    #     # base/root height termination
-    #     base_height = self.robot.data.root_pos_w[:, 2]
-    #     height_reset = base_height < 0.5
-    #     time_out_buf = self.episode_length_buf >= self.max_episode_length
-    #     reset_buf = contact_reset | height_reset | time_out_buf
-    #     return reset_buf, time_out_buf
 
     def init_obs_buffer(self):
         if self.add_noise:
@@ -828,7 +808,7 @@ class UnitreeEnv(VecEnv):
                 right_hand_pos,
             ),
             dim=-1,
-        )  # 29+29+12 = 70维
+        )  # 29+29+12 = 70 dim
     
     # ========== FSM Mode Manager Methods ==========
     
@@ -895,7 +875,6 @@ class UnitreeEnv(VecEnv):
                 
                 if intent_id == 0:  # STAND intent
                     # Balanced initialization to train all deceleration paths
-                    # 34% RUN→STAND, 33% WALK→STAND, 33% STAND
                     if rand < 0.20:
                         self.current_mode[i] = self.MODE_RUN    # Critical: trains RUN→STAND transition
                     elif rand < 0.60:
@@ -904,7 +883,6 @@ class UnitreeEnv(VecEnv):
                         self.current_mode[i] = self.MODE_STAND  # Already at target
                 
                 elif intent_id == 1:  # WALK intent
-                    # Balanced initialization: 34% STAND, 33% WALK, 33% RUN
                     if rand < 0.20:
                         self.current_mode[i] = self.MODE_STAND  # STAND→WALK acceleration
                     elif rand < 0.60:
@@ -913,7 +891,6 @@ class UnitreeEnv(VecEnv):
                         self.current_mode[i] = self.MODE_RUN    # RUN→WALK deceleration
                 
                 elif intent_id == 2:  # RUN intent
-                    # Balanced initialization: 34% STAND, 33% WALK, 33% RUN
                     if rand < 0.40:
                         self.current_mode[i] = self.MODE_STAND  # STAND→TRANSITION→RUN
                     elif rand < 0.60:
@@ -921,7 +898,6 @@ class UnitreeEnv(VecEnv):
                     else:
                         self.current_mode[i] = self.MODE_RUN    # Start from RUN
         else:
-            # Random initialization (only STAND or WALK, no RUN)
             rand = torch.rand(len(env_ids), device=self.device)
             self.current_mode[env_ids] = torch.where(
                 rand < 0.5,
