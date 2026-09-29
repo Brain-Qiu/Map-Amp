@@ -150,7 +150,7 @@ This project repository builds upon the shoulders of giants.
 
 ## Citation
 
-If you use Legged Lab in your research, you can cite it as follows:
+If you use MAP-AMP in your research, you can cite it as follows:
 
 ```bibtex
 @software{LeggedLab,
