@@ -129,10 +129,12 @@ python legged_lab/scripts/play_unitree_fsm.py --task=unitree_map_amp
 ### Sim2Sim(MuJoCo)
 
 Evaluate the trained policy in MuJoCo to perform cross-simulation validation.
-
-Exported_policy/ contains pretrained policies provided by the project. When using the play script, trained policy is exported automatically and saved to path like logs/[experiment_name]/[timestamp]/exported/policy.pt.(remerber out of the conda environment,like in base env)
+Exported_policy/ contains pretrained policies provided by the project. When using the play script, trained policy is exported automatically and saved to path like logs/[experiment_name]/[timestamp]/exported/policy.pt.
 ```bash
 python legged_lab/scripts/sim2sim_unitree_fsm.py --experiment_name unitree_map_amp --load_run *-*-*_*-*-*
+
+# or just use the example policy to get a quick view
+python legged_lab/scripts/sim2sim_unitree_fsm.py --experiment_name unitree_map_amp
 ```
 
 
